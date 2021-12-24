@@ -37,7 +37,7 @@ if (basename($_SERVER['SCRIPT_NAME']) != 'Dashboard.php') {
 				ON banktrans.type=systypes.typeid
 			INNER JOIN currencies
 				ON banktrans.currcode=currencies.currabrev
-			ORDER BY banktrans.transdate DESC LIMIT 5";
+			ORDER BY banktrans.transdate DESC, ABS(banktrans.amount) DESC LIMIT 10";
 
 	$DashboardResult = DB_query($SQL);
 	$AccountCurrTotal = 0;
