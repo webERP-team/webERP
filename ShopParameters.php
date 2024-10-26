@@ -172,7 +172,7 @@ if (isset($_POST['submit'])) {
 
 			DB_Txn_Begin();
 			foreach ($SQL as $SqlLine) {
-				$result = DB_query($SqlLine,$ErrMsg,$DbgMsg,true);
+				$Result = DB_query($SqlLine,$ErrMsg,$DbgMsg,true);
 			}
 			DB_Txn_Commit();
 			prnMsg( _('Shop configuration updated'),'success');
